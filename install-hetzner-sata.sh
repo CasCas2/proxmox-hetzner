@@ -36,7 +36,7 @@
 ################################################################################
 
 #set size of swap partition or leave blank for autoconfig, USE NUMBER ONLY, will be in gbytes, 0 to disable
-MY_SWAP=""
+MY_SWAP="32"
 #set size of cache partition or leave blank for autoconfig, USE NUMBER ONLY, will be in gbytes, 0 to disable
 MY_CACHE=""
 #set size of slog partition or leave blank for autoconfig, USE NUMBER ONLY, will be in gbytes, 0 to disable
@@ -44,7 +44,7 @@ MY_SLOG=""
 #set size of boot partition or leave blank for autoconfig, will be in gbytes, 1GB or larger
 MY_BOOT="1"
 #set size of root partition, will be in gbytes, 10GB or larger
-MY_ROOT="40"
+MY_ROOT="64"
 #comment out to disable LVM and use a very simple partition setup of / and swap
 USE_LVM="TRUE"
 
@@ -242,10 +242,10 @@ if [ ! -f $installimage_file ] ; then
 fi
 
 #fetching post install
-curl "https://raw.githubusercontent.com/CasCas2/proxmox-hetzner/master/hetzner-prox/proxmox7" --output /post-install
+curl "https://raw.githubusercontent.com/romspeu/proxmox-hetzner/master/hetzner-prox/proxmox7" --output /post-install
 
 #Customising post install file
-echo "wget https://raw.githubusercontent.com/CasCas2/proxmox-hetzner/master/install-post.sh -c -O install-post.sh && bash install-post.sh && rm install-post.sh" >> /post-install
+echo "wget https://raw.githubusercontent.com/romspeu/proxmox-hetzner/master/install-post.sh -c -O install-post.sh && bash install-post.sh && rm install-post.sh" >> /post-install
 
 if grep -q '#!/bin/bash' "/post-install"; then
   chmod 777 /post-install
