@@ -1,6 +1,6 @@
 # NO-System - Proxmox (pve) only for Hetzner
 
-## Install Proxmox Recommendations
+## Install Proxmox Recommendations 
 Recommeneded partitioning scheme:
 * Raid 1 (mirror) 40 000MB ext4 /
 * Raid 1 (mirror) 30 000MB ext4 /xshok/zfs-cache *only create if an ssd and there is 1+ unused hdd which will be made into a zfspool*
